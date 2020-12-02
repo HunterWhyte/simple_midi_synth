@@ -1,0 +1,228 @@
+
+simple_midi_synth.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000001dc  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .debug_aranges 00000028  00000000  00000000  00000230  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  2 .debug_pubnames 00000033  00000000  00000000  00000258  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_info   00000130  00000000  00000000  0000028b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_abbrev 000000ce  00000000  00000000  000003bb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_line   0000017c  00000000  00000000  00000489  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_frame  00000030  00000000  00000000  00000608  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_str    000000e9  00000000  00000000  00000638  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_loc    0000005f  00000000  00000000  00000721  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_ranges 00000038  00000000  00000000  00000780  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	94 c0       	rjmp	.+296    	; 0x12a <__ctors_end>
+   2:	99 c0       	rjmp	.+306    	; 0x136 <__bad_interrupt>
+   4:	98 c0       	rjmp	.+304    	; 0x136 <__bad_interrupt>
+   6:	97 c0       	rjmp	.+302    	; 0x136 <__bad_interrupt>
+   8:	96 c0       	rjmp	.+300    	; 0x136 <__bad_interrupt>
+   a:	95 c0       	rjmp	.+298    	; 0x136 <__bad_interrupt>
+   c:	94 c0       	rjmp	.+296    	; 0x136 <__bad_interrupt>
+   e:	93 c0       	rjmp	.+294    	; 0x136 <__bad_interrupt>
+  10:	92 c0       	rjmp	.+292    	; 0x136 <__bad_interrupt>
+  12:	91 c0       	rjmp	.+290    	; 0x136 <__bad_interrupt>
+  14:	90 c0       	rjmp	.+288    	; 0x136 <__bad_interrupt>
+  16:	8f c0       	rjmp	.+286    	; 0x136 <__bad_interrupt>
+  18:	8e c0       	rjmp	.+284    	; 0x136 <__bad_interrupt>
+  1a:	8d c0       	rjmp	.+282    	; 0x136 <__bad_interrupt>
+  1c:	8c c0       	rjmp	.+280    	; 0x136 <__bad_interrupt>
+  1e:	8b c0       	rjmp	.+278    	; 0x136 <__bad_interrupt>
+  20:	8a c0       	rjmp	.+276    	; 0x136 <__bad_interrupt>
+  22:	89 c0       	rjmp	.+274    	; 0x136 <__bad_interrupt>
+  24:	88 c0       	rjmp	.+272    	; 0x136 <__bad_interrupt>
+  26:	87 c0       	rjmp	.+270    	; 0x136 <__bad_interrupt>
+  28:	86 c0       	rjmp	.+268    	; 0x136 <__bad_interrupt>
+
+0000002a <pitchLUT>:
+  2a:	ff ff f1 a1 e4 11 d7 44 cb 2f bf c8 b5 04 aa db     .......D./......
+  3a:	a1 44 98 37 8f ac 87 9c 80 00 78 d0 72 09 6b a2     .D.7......x.r.k.
+  4a:	65 98 5f e4 5a 82 55 6e 50 a2 4c 1c 47 d6 43 ce     e._.Z.UnP.L.G.C.
+  5a:	40 00 3c 68 39 04 35 d1 32 cc 2f f2 2d 41 2a b7     @.<h9.5.2./.-A*.
+  6a:	28 51 26 0e 23 eb 21 e7 20 00 1e 34 1c 82 1a e9     (Q&.#.!. ..4....
+  7a:	19 66 17 f9 16 a1 15 5b 14 29 13 07 11 f6 10 f3     .f.....[.)......
+  8a:	10 00 0f 1a 0e 41 0d 74 0c b3 0b fc 0b 50 0a ae     .....A.t.....P..
+  9a:	0a 14 09 83 08 fb 08 7a 08 00 07 8d 07 21 06 ba     .......z.....!..
+  aa:	06 59 05 fe 05 a8 05 57 05 0a 04 c2 04 7d 04 3d     .Y.....W.....}.=
+  ba:	04 00 03 c7 03 90 03 5d 03 2d 02 ff 02 d4 02 ab     .......].-......
+  ca:	02 85 02 61 02 3f 02 1e 02 00 01 e3 01 c8 01 af     ...a.?..........
+  da:	01 96 01 80 01 6a 01 56 01 43 01 30 01 1f 01 0f     .....j.V.C.0....
+  ea:	01 00 00 f2 00 e4 00 d7 00 cb 00 c0 00 b5 00 ab     ................
+  fa:	00 a1 00 98 00 90 00 88 00 80 00 79 00 72 00 6c     ...........y.r.l
+ 10a:	00 66 00 60 00 5b 00 55 00 51 00 4c 00 48 00 44     .f.`.[.U.Q.L.H.D
+ 11a:	00 40 00 3c 00 39 00 36 00 33 00 30 00 2d 00 00     .@.<.9.6.3.0.-..
+
+0000012a <__ctors_end>:
+ 12a:	11 24       	eor	r1, r1
+ 12c:	1f be       	out	0x3f, r1	; 63
+ 12e:	cf ed       	ldi	r28, 0xDF	; 223
+ 130:	cd bf       	out	0x3d, r28	; 61
+ 132:	09 d0       	rcall	.+18     	; 0x146 <main>
+ 134:	51 c0       	rjmp	.+162    	; 0x1d8 <_exit>
+
+00000136 <__bad_interrupt>:
+ 136:	64 cf       	rjmp	.-312    	; 0x0 <__vectors>
+
+00000138 <rxByte>:
+
+	}
+}
+
+unsigned char rxByte(void){
+	while((UCSRA &(1<<RXC)) == 0);
+ 138:	eb e2       	ldi	r30, 0x2B	; 43
+ 13a:	f0 e0       	ldi	r31, 0x00	; 0
+ 13c:	80 81       	ld	r24, Z
+ 13e:	88 23       	and	r24, r24
+ 140:	ec f7       	brge	.-6      	; 0x13c <rxByte+0x4>
+	return UDR;
+ 142:	8c b1       	in	r24, 0x0c	; 12
+ 144:	08 95       	ret
+
+00000146 <main>:
+										0x00,0x66,0x00,0x60,0x00,0x5B,0x00,0x55,0x00,0x51,0x00,0x4C,0x00,0x48,0x00,0x44,
+										0x00,0x40,0x00,0x3C,0x00,0x39,0x00,0x36,0x00,0x33,0x00,0x30,0x00,0x2D};
+unsigned char rxByte(void);	
+
+int main(void)
+{	
+ 146:	af 92       	push	r10
+ 148:	bf 92       	push	r11
+ 14a:	cf 92       	push	r12
+ 14c:	df 92       	push	r13
+ 14e:	ef 92       	push	r14
+ 150:	ff 92       	push	r15
+ 152:	0f 93       	push	r16
+ 154:	1f 93       	push	r17
+ 156:	cf 93       	push	r28
+ 158:	df 93       	push	r29
+	
+	DDRB   |= (1 << PB3);                   // PWM output on PB3
+ 15a:	e7 e3       	ldi	r30, 0x37	; 55
+ 15c:	f0 e0       	ldi	r31, 0x00	; 0
+ 15e:	80 81       	ld	r24, Z
+ 160:	88 60       	ori	r24, 0x08	; 8
+ 162:	80 83       	st	Z, r24
+	TCCR1A = (1 << COM1A0);  // phase correct PWM mode
+ 164:	80 e4       	ldi	r24, 0x40	; 64
+ 166:	8f bd       	out	0x2f, r24	; 47
+	TCCR1B = (1 << WGM12) | (1 << CS10);
+ 168:	89 e0       	ldi	r24, 0x09	; 9
+ 16a:	8e bd       	out	0x2e, r24	; 46
+	OCR1AH = 0x2F;     
+ 16c:	8f e2       	ldi	r24, 0x2F	; 47
+ 16e:	8b bd       	out	0x2b, r24	; 43
+	OCR1AL = 0x00;     
+ 170:	1a bc       	out	0x2a, r1	; 42
+	UBRRH = 0; // baud rate
+ 172:	12 b8       	out	0x02, r1	; 2
+	UBRRL = 15;
+ 174:	8f e0       	ldi	r24, 0x0F	; 15
+ 176:	89 b9       	out	0x09, r24	; 9
+	UCSRB = (1<<RXEN);  // enable reciever
+ 178:	80 e1       	ldi	r24, 0x10	; 16
+ 17a:	8a b9       	out	0x0a, r24	; 10
+	UCSRC = (1<<UCSZ1|1<<UCSZ0); 
+ 17c:	86 e0       	ldi	r24, 0x06	; 6
+ 17e:	83 b9       	out	0x03, r24	; 3
+ 180:	1f ef       	ldi	r17, 0xFF	; 255
+		status = rxByte();
+		if (status == 0b10000000){
+			//note off
+			noteoff = rxByte();
+			if(noteoff == note){
+				TCCR1B = 0; // turn off PWM
+ 182:	ce e4       	ldi	r28, 0x4E	; 78
+ 184:	d0 e0       	ldi	r29, 0x00	; 0
+		}
+		else if (status == 0b10010000){
+			//note on
+			note = rxByte();
+			pitch = (note - 27) << 1;
+			TCCR1B = (1 << WGM12) | (1 << CS10); // turn on PWM
+ 186:	09 e0       	ldi	r16, 0x09	; 9
+			
+			OCR1AH = pgm_read_byte(&pitchLUT[pitch]);
+ 188:	0f 2e       	mov	r0, r31
+ 18a:	fa e2       	ldi	r31, 0x2A	; 42
+ 18c:	af 2e       	mov	r10, r31
+ 18e:	f0 e0       	ldi	r31, 0x00	; 0
+ 190:	bf 2e       	mov	r11, r31
+ 192:	f0 2d       	mov	r31, r0
+ 194:	0f 2e       	mov	r0, r31
+ 196:	fb e4       	ldi	r31, 0x4B	; 75
+ 198:	cf 2e       	mov	r12, r31
+ 19a:	dd 24       	eor	r13, r13
+ 19c:	f0 2d       	mov	r31, r0
+			OCR1AL = pgm_read_byte(&pitchLUT[pitch]);
+ 19e:	0f 2e       	mov	r0, r31
+ 1a0:	fa e4       	ldi	r31, 0x4A	; 74
+ 1a2:	ef 2e       	mov	r14, r31
+ 1a4:	ff 24       	eor	r15, r15
+ 1a6:	f0 2d       	mov	r31, r0
+	unsigned char noteoff = 0xFF;
+	unsigned char pitch;
+	
+	while(1)
+	{
+		status = rxByte();
+ 1a8:	c7 df       	rcall	.-114    	; 0x138 <rxByte>
+		if (status == 0b10000000){
+ 1aa:	80 38       	cpi	r24, 0x80	; 128
+ 1ac:	29 f4       	brne	.+10     	; 0x1b8 <main+0x72>
+			//note off
+			noteoff = rxByte();
+ 1ae:	c4 df       	rcall	.-120    	; 0x138 <rxByte>
+			if(noteoff == note){
+ 1b0:	18 17       	cp	r17, r24
+ 1b2:	d1 f7       	brne	.-12     	; 0x1a8 <main+0x62>
+				TCCR1B = 0; // turn off PWM
+ 1b4:	18 82       	st	Y, r1
+ 1b6:	f8 cf       	rjmp	.-16     	; 0x1a8 <main+0x62>
+			}
+		}
+		else if (status == 0b10010000){
+ 1b8:	80 39       	cpi	r24, 0x90	; 144
+ 1ba:	b1 f7       	brne	.-20     	; 0x1a8 <main+0x62>
+			//note on
+			note = rxByte();
+ 1bc:	bd df       	rcall	.-134    	; 0x138 <rxByte>
+ 1be:	18 2f       	mov	r17, r24
+			pitch = (note - 27) << 1;
+			TCCR1B = (1 << WGM12) | (1 << CS10); // turn on PWM
+ 1c0:	08 83       	st	Y, r16
+			
+			OCR1AH = pgm_read_byte(&pitchLUT[pitch]);
+ 1c2:	8b 51       	subi	r24, 0x1B	; 27
+ 1c4:	88 0f       	add	r24, r24
+ 1c6:	f5 01       	movw	r30, r10
+ 1c8:	e8 0f       	add	r30, r24
+ 1ca:	f1 1d       	adc	r31, r1
+ 1cc:	e4 91       	lpm	r30, Z+
+ 1ce:	d6 01       	movw	r26, r12
+ 1d0:	ec 93       	st	X, r30
+			OCR1AL = pgm_read_byte(&pitchLUT[pitch]);
+ 1d2:	d7 01       	movw	r26, r14
+ 1d4:	ec 93       	st	X, r30
+ 1d6:	e8 cf       	rjmp	.-48     	; 0x1a8 <main+0x62>
+
+000001d8 <_exit>:
+ 1d8:	f8 94       	cli
+
+000001da <__stop_program>:
+ 1da:	ff cf       	rjmp	.-2      	; 0x1da <__stop_program>
